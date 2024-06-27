@@ -25,14 +25,17 @@ module Memory(
             mem[10] <= 32'h0F0000F0;
         end else begin
             if (write_en) begin
-                mem[address] <= write_data;
+                for (i = 0; i < 16; i = i + 1) begin
+                    mem[(i + address) % 512] <= (write_data[32 * i +: 32]);
+                end
             end
+
             if (read_en) begin
-                read_data <= mem[address];
-            end else begin
-                read_data <= 32'bz; // High impedance state when read is disabled
+                for (j = 0; j < 16; j = j + 1) begin
+                    read_data[32 * j +: 32] = mem[(j + address) % 512];
+                end 
             end
         end
     end
-
 endmodule
+
