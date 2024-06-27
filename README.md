@@ -45,6 +45,8 @@ module Register_File(
     output signed [511:0] A3,
     output signed [511:0] A4
 );
+```
+
 Implements a register file with 4 registers. It supports simultaneous reading and writing operations.
 
 ### ALU
