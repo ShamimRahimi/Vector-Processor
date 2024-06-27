@@ -36,6 +36,11 @@ module Vector_Processor(
     reg DM_read_enable;
     Memory data_memory (clk, reset, DM_write_enable, DM_read_enable, DM_address, DM_in, DM_out);
 
+    assign A1 = RF_A1;
+    assign A2 = RF_A2;
+    assign A3 = RF_A3;
+    assign A4 = RF_A4;
+    
     integer i;
     always @(posedge clk) begin
         #5
@@ -45,7 +50,6 @@ module Vector_Processor(
                 DM_read_enable <= 1;
                 DM_address <= instruction[8:0];
                 write_en <= 1;
-                write_en2 <= 1;
                 write_sel <= instruction[10:9];
                 #5
                 RF_in <= DM_out;
