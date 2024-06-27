@@ -1,9 +1,9 @@
 # Vector-Processor
 This project implements a simple vector processor using Verilog. It consists of a Register File, ALU, Memory, and a Vector Processor module, along with a test bench to validate the functionality.
 
-Table of Contents
+#Table_of_Contents
 
-Project Structure
+[Project Structure] (#Project_Structure)
 Modules
 Register_File
 ALU
@@ -15,3 +15,5 @@ Prerequisites
 Contributing
 License
 Contact
+
+#Project_Structure)
