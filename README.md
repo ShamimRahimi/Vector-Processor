@@ -12,10 +12,6 @@ This project implements a simple vector processor using Verilog. It consists of 
    - [Vector_Processor](#vector_processor)
    - [TB (Test Bench)](#tb-test-bench)
 3. [Installation and Usage](#installation-and-usage)
-4. [Prerequisites](#prerequisites)
-5. [Contributing](#contributing)
-6. [License](#license)
-7. [Contact](#contact)
 
 ## Project Structure
 
@@ -30,3 +26,23 @@ This project implements a simple vector processor using Verilog. It consists of 
 5. **TB.v**: Test bench module to validate the functionality of the vector processor.
 
 ## Modules
+
+### Register_File
+
+```verilog
+module Register_File(
+    input wire clk,
+    input wire reset,
+    input wire [1:0] write_sel,
+    input wire [511:0] write_data,
+    input wire [1:0] write_sel2,
+    input wire [511:0] write_data2,
+    input wire write_en,
+    input wire write_en2,
+    input wire [1:0] read_sel,
+    output wire [511:0] read_data,
+    output signed [511:0] A1,
+    output signed [511:0] A2,
+    output signed [511:0] A3,
+    output signed [511:0] A4
+);
