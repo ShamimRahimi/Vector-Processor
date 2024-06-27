@@ -47,7 +47,7 @@ module TB;
     end
 
     initial
-        $monitor($time, ":\nA1 = %h\nA2 = %h\nA3 = %h\nA4 = %h\n--------------------",
+        $monitor($time, ":\nA1 = %h\nA2 = %h\nA3 = %h\nA4 = %h\n",
                     A1, A2, A3, A4);
 
 endmodule
