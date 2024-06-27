@@ -50,15 +50,18 @@ module Register_File(
 Implements a register file with 4 registers. It supports simultaneous reading and writing operations.
 
 ### ALU
+```verilog
 module ALU(
     input signed [511:0] A1,
     input signed [511:0] A2,
     input wire [1:0] operation, // 00: Addition, 01: Multiplication
     output signed [1023:0] output_data
 );
+```
 Performs addition and multiplication operations on 512-bit signed inputs.
 
 ### Memory
+```verilog
 module Memory(
     input wire clk,
     input wire reset,
@@ -68,9 +71,11 @@ module Memory(
     input signed [511:0] write_data,
     output reg signed [511:0] read_data
 );
+```
 Provides 512 memory locations, each 32 bits wide, for data storage and retrieva
 
 ### Vector_Processor
+```verilog
 module Vector_Processor(
     input wire clk,
     input wire reset,
@@ -80,6 +85,7 @@ module Vector_Processor(
     output signed [511 : 0] A3,
     output signed [511 : 0] A4
 );
+```
 Combines the register file, ALU, and memory modules to implement a vector processor capable of executing instructions.
 
 ## Installation and Usage
